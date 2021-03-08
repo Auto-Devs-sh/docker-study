@@ -1,5 +1,5 @@
 #  Docker com Ruby on Rails
-O docker facilita muito nas criações de projetos em Ruby por ser mais automatizado do que instalar na sua máquina local as ferramentas como Ruby Version Manager(rvm) ou Ruby Environment(rbenv), com apenas alguns comandos se tem um ambiente de desenvolvimento no contêiner.
+O docker facilita muito nas criações de projetos em Ruby por ser mais rápido a instalação de alguns serviços, por rodar em um conteiner ele automatiza muitas coisas que seriam feitas manualmente usando código, ferramentas como Ruby Version Manager(rvm) ou Ruby Environment(rbenv), com apenas alguns comandos se tem um ambiente de desenvolvimento no contêiner.
 
 ##  Dockerfile e arquivo docker-compose
 É nesses dois arquivos que tem todo o processo do serviço. Versões, em qual porta eles vão rodar e por ai vai.
@@ -38,4 +38,4 @@ Parece um arquivo docker, mas com uma identação melhor.
 -  `build` : ` .` - O ponto aqui significa um caminho de arquivo onde encontrar o Dockerfile, que são as instruções de compilação.
 -  `container_name` - O nome do contêiner.
 -  `portas` : - essas são as portas a serem expostas do contêiner docker para nossa máquina local host. O padrão aqui é HOST: CONTAINER. Em nosso caso, é `" 3000: 3000 "` . O que significa que estamos permitindo que a porta do servidor Rails padrão (3000) esteja disponível no "localhost: 3000" de nossa máquina local.
--  `volumes` : - volume significa que mesmo se fecharmos ou excluirmos o Docker, podemos especificar quais arquivos podemos manter em nossa máquina local. Colocamos `./:/ home / app` lá porque nomeamos anteriormente em nosso Dockerfile o diretório de trabalho como` / home / app` .
+-  `volumes` : - volume significa que mesmo se fecharmos ou excluirmos o Docker, podemos especificar quais arquivos podemos manter em nossa máquina local. Colocamos `./:/home/app` lá porque nomeamos anteriormente em nosso Dockerfile o diretório de trabalho como`/home/app` .
